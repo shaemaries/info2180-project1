@@ -2,10 +2,50 @@
 body {
     margin: 0;
     font-size: 16px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:1 fr auto;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer"
 }
 
 .container {
     margin: 0 auto;
     max-width: 960px;
     width: 100%;
+
 }
+header{
+    grid-area: header;
+}
+ header, .container{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     /*flex-wrap: wrap;*/
+ }
+
+ header, h1 {
+     text-align: left;
+ }
+
+ header, ul{
+   list-style-type: none;
+   text-align: right;
+
+ }
+ header, ul, li{
+     display: inline;
+ }
+
+ main{
+     grid-area: main;
+ }
+
+ footer{
+     grid-area: footer;
+ }
+
