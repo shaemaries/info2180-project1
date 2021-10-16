@@ -25,7 +25,7 @@ header{
      display: flex;
      align-items: center;
      justify-content: space-between;
-     /*flex-wrap: wrap;*/
+     flex-wrap: wrap;
  }
 
  header, h1 {
@@ -44,6 +44,51 @@ header{
  main{
      grid-area: main;
  }
+
+ .overview-hero{
+     display: flex;
+     justify-content: center;
+     align-items: middle ;
+     padding: 100px;
+ }
+ .overview-hero-image,img{
+     width: 200px;
+ }
+
+ .overview-hero-text { 
+     flex: 1 1 300px;
+     margin:5px  50px;
+
+ }
+
+ .cards{
+     display: grid;
+     grid-template-columns: repeat(3, 1fr); 
+     margin: 5px;  
+ }
+
+ .cards,img{
+     width: 100%;
+     height: auto;
+ }
+
+.card-body{
+    padding: 20px;
+}
+
+.testing{
+    display: flex;
+    justify-content: center;
+    align-items: middle ;
+    padding: 100px;
+}
+
+.testing-description{
+    flex: 1 1 300px;
+    margin:5px  50px;
+    padding: 150px;
+}
+        
 
  footer{
      grid-area: footer;
