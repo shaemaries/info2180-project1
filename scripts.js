@@ -3,21 +3,21 @@
 
 window.onload = function(){
     var form = document.getElementsByTagName('form')[0]
-	document.getElementsByTagName('button')[0].addEventListener("click", validateForm)
+	document.getElementsByTagName('button')[0].addEventListener("click", validForm)
 }
 
-function validateForm(){
-    var validEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    var inputEmail= document.getElementById("email").value.trim()
+function validForm(){
+    var validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    var inputEmail = document.getElementById("email").value.trim()
 
     event.preventDefault();
-    event.stopPropagation()
+    event.stopPropagation();
    
 
     if(validEmail.test(inputEmail) && inputEmail !=""){
-         setMessage('Thank you! Your email adress '+ inputEmail +' has been added to our mailing list', "valid")
+         setMessage('Thank you! Your email adress '+ inputEmail +' has been added to our mailing list!', "valid")
          document.getElementById("email").value = ""
-         return 
+         return
     }
 
 
@@ -28,6 +28,7 @@ function validateForm(){
 
 function setMessage(message, status){
     var messageContainer = document.getElementsByClassName("message")[0]
+   
     messageContainer.innerHTML=message
     messageContainer.style.backgroundColor="white"
     messageContainer.style.marginTop ="10px"
@@ -40,6 +41,8 @@ function setMessage(message, status){
         messageContainer.style.color="green"
     }
 
+  
+    messageContainer.style.display='';
     setTimeout(function(){
         messageContainer.style.display='none';
     },3000)
